@@ -53,15 +53,29 @@ def logout():
 def callback():
     code = request.args.get("code")
     
-    token_data = exchange_code_for_token(
-        code, 
-        SPOTIFY_CLIENT_ID, 
-        SPOTIFY_CLIENT_SECRET, 
-        url_for('callback', _external=True)
-    )
+    if not code:
+        # If no code is provided, redirect to login
+        session.clear()
+        return redirect("/")
 
-    session["access_token"] = token_data.get("access_token")
-    session["refresh_token"] = token_data.get("refresh_token")
+    try:
+        token_data = exchange_code_for_token(
+            code, 
+            SPOTIFY_CLIENT_ID, 
+            SPOTIFY_CLIENT_SECRET, 
+            url_for('callback', _external=True)
+        )
+
+        if not token_data or "access_token" not in token_data:
+            session.clear()
+            return redirect("/")
+
+        session["access_token"] = token_data.get("access_token")
+        session["refresh_token"] = token_data.get("refresh_token")
+
+    except Exception as e:
+        session.clear()
+        return redirect("/")
 
     return redirect("/dashboard")
 

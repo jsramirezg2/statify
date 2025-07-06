@@ -1,5 +1,6 @@
 # Statify
 #### Video Demo:  <URL HERE>
+#### Live Demo: [Try Statify](https://statify-t8gj.onrender.com/) 🎵
 #### Description:
 Statify is a web application developed as the final project for Harvard's CS50 course. Its purpose is to provide users with insightful statistics and visualizations about their Spotify listening habits. By connecting to the Spotify Web API, Statify allows users to authenticate with their Spotify account, retrieve their listening data, and explore personalized analytics in a a single-page, simple layout that is user-friendly
 
