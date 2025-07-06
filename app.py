@@ -110,5 +110,9 @@ def dashboard():
     return render_template("dashboard.html", user=user_data, top_artists=top_artists, top_genres=top_genres, top_tracks=top_tracks)
 
 
+@app.route('/show-uri')
+def show_uri():
+    return url_for('callback', _external=True)
+
 if __name__ == '__main__':
     app.run(debug=True)
