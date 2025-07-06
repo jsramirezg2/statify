@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="flex flex-col items-center justify-center h-screen text-center blurred-bg">
+    <h1 class="text-4xl font-bold mb-4 text-green-500">Welcome to Statify</h1>
+    <p class="text-lg text-gray-300 mb-8">Analyze your listening habits visually.</p>
+    <a href="/login" class="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-3 rounded-full">
+        Log in with Spotify
+    </a>
+</div>
+
+{% endblock %}

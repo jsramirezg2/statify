@@ -1,0 +1,6 @@
+.grid div {
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
